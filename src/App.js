@@ -1,22 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
-  const arr=[
-    <li>vacuum</li>,
-    <li>yagodisa</li>,
-    <li>kolenka</li>,
-    <li>lokot</li>,
-    <li>sheep</li>,
-    <li>poleno</li>,
-  ];
-  const res=arr.map(function(item) {
-    return <span>{item}</span>
-  })
+  const[value,setText]=useState("0")
+  let year=new Date()
 
-  
-  
-  return <>{res}</>
+
+
+  return <>
+  <input value={value} onChange={event =>setText(event.target.value)} />
+  <p>Возраст : {year.getFullYear()-value}</p></>
     
   ;
 
