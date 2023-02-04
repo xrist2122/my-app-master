@@ -11,22 +11,34 @@ function App() {
   //   color:"crimson"
   // };
   const[smena,setChange]=useState(true)
-  let jopa;
+  let govno;
   if(smena){
-    kvadat.style.backgroundColor="white"
-    krud.style.backgroundColor="white";
-
+    govno={
+      backgroundColor:"white"
+    }
   }else{
-    kvadat.style.backgroundColor="black"
-    krud.style.backgroundColor="black";
-
+    govno={
+      backgroundColor:"black"
+    }
   }
+  let ponos;
+  if(smena){
+    ponos={
+      backgroundColor:"white"
+    }
+  }else{
+    ponos={
+      backgroundColor:"black"
+    }
+  }
+  
 
 
 
-  return <div className='krud'>
+  return <div style={govno}>
   <input type="checkbox" checked={smena} onChange={() => setChange(!smena)} />
-  <button className='kvadat'>fjbg</button>
+  <button style={ponos}>fjbg</button>
+
   
   {/* <button onClick={() => setText(!vopros)}>btn1</button>
   <p>{vopros ?<h3 style={daa}>еестьь</h3>:<h3 style={nee}>нееет</h3>}</p> */}
