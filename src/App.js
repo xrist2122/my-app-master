@@ -3,14 +3,14 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const[value,setText]=useState("0")
-  let year=new Date()
+  const[vopros,setText]=useState(false)
 
 
 
   return <>
-  <input value={value} onChange={event =>setText(event.target.value)} />
-  <p>Возраст : {year.getFullYear()-value}</p></>
+  <button Onclick={() => setText(!vopros)}>btn1</button>
+  <p>{vopros ?"есть ":"нет"}</p>
+  </>
     
   ;
 
