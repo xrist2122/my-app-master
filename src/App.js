@@ -14,21 +14,21 @@ function App() {
   let govno;
   if(smena){
     govno={
-      backgroundColor:"white"
+      backgroundColor:"black"
     }
   }else{
     govno={
-      backgroundColor:"black"
+      backgroundColor:"white"
     }
   }
   let ponos;
   if(smena){
     ponos={
-      backgroundColor:"white"
+      backgroundColor:"green"
     }
   }else{
     ponos={
-      backgroundColor:"black"
+      backgroundColor:"white"
     }
   }
   
