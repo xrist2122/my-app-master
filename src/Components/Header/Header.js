@@ -7,7 +7,7 @@ function Header() {
   <div className='leftHeader'>
     <img src="/img/icons8-skull-crossbones-50 (1) 15.png"style={{"marginTop": "20px"}} width={40} height={40}/>
     <div className='leftHeaderText'>
-    <h1 style={{"color": "white"}}>Black Market228</h1>
+    <h2 style={{"color": "white"}}>Black Market228</h2>
     <p style={{"color": "#9D9D9D"}}>НИКОГО НЕ ПРОСИМ</p>
     </div>
     </div>
