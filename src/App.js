@@ -9,11 +9,12 @@ import AllCards from './Components/Main/AllCards';
 import SideCart from './Components/Cart/SideCart';
 
 function App() {
+  const[openCart,setOpenCart]=useState(false)
   
 
   return<>
-  <SideCart />
-  <Header />
+  <SideCart openCart={openCart} onOpenCart={() =>setOpenCart(false)}/>
+  <Header onCloseCart={() =>setOpenCart(true)}/>
   <Main />
   <AllCards /></>
   

@@ -1,6 +1,6 @@
 import "./Header.css"
 import Stack from 'react-bootstrap/Stack';
-function Header() {
+function Header(props) {
   
 
   return<div className="mainHeader"><Stack direction="horizontal" gap={3}>
@@ -13,7 +13,7 @@ function Header() {
     </div>
 
     <div className='rightHeader ms-auto'>
-    <img src="/img/Group.svg" width={20} height={20}/>
+    <img src="/img/Group.svg" width={20} height={20} onClick={() =>props.onCloseCart()}/>
     <span style={{"color": "#5C5C5C"}}>1500 р.</span>
     <img src="/img/zmdi_favorite-outline.svg" width={20} height={20}/>
     <img src="/img/Union.svg" width={20} height={20}/>

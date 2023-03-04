@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {Card, Stack} from 'react-bootstrap';
 import './AllCards.css'
 
-function CardProd() {
+function CardProd(props) {
 
   const [addedCart, SetAddedCart] = useState(false)
   const [addFavorite,setFavorite]=useState(false)
@@ -10,13 +10,13 @@ function CardProd() {
 
 
   return (
-    <Card style={{ width: '200px' }} className="poleno2">
+    <Card className="poleno2">
       <img src={addFavorite ? './img/favorite.png' : './img/uncheked.svg'} onClick={() => setFavorite(!addFavorite)} className="cyka"/>
-      <Card.Img variant="top" src="./img/Пуэр дикий.png" />
+      <Card.Img variant="top" src={props.img} className="class1"/>
       <Card.Body>
-        <Card.Title>Черный чай «Джамира TGFOP»</Card.Title>
+        <Card.Title>{props.name}</Card.Title>
         <Stack direction="horizontal" gap={3}>
-        <div className="bg-light border"><p>Цена:</p><p>482р/унция</p></div>
+        <div className="bg-light border"><p>Цена:</p><p>{props.cost}</p></div>
         <div className="bg-light border ms-auto">
           <img src={addedCart ? './img/clickedButton.svg' : './img/addButton.svg'} onClick={() => SetAddedCart(!addedCart)}/>
         </div>
