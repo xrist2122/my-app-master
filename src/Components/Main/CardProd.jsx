@@ -6,6 +6,11 @@ function CardProd(props) {
 
   const [addedCart, SetAddedCart] = useState(false)
   const [addFavorite,setFavorite]=useState(false)
+  function clickAddButton(newProd){
+    SetAddedCart(!addedCart)
+    props.addProdToCart(newProd)
+
+  }
 
 
 
@@ -18,7 +23,7 @@ function CardProd(props) {
         <Stack direction="horizontal" gap={3}>
         <div className="bg-light border"><p>Цена:</p><p>{props.cost}</p></div>
         <div className="bg-light border ms-auto">
-          <img src={addedCart ? './img/clickedButton.svg' : './img/addButton.svg'} onClick={() => SetAddedCart(!addedCart)}/>
+          <img src={addedCart ? './img/clickedButton.svg' : './img/addButton.svg'} onClick={() => clickAddButton({id:props.id,name:props.name,cost:props.cost,img:props.img})} />
         </div>
     </Stack>
       </Card.Body>

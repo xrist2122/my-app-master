@@ -9,14 +9,18 @@ import AllCards from './Components/Main/AllCards';
 import SideCart from './Components/Cart/SideCart';
 
 function App() {
-  const[openCart,setOpenCart]=useState(false)
+  const[openCart,setOpenCart]=useState(false);
+  const [cart,setCart]=useState([])
+  function addProdToCart(newProd){
+    setCart(prev =>[...prev,newProd])
+  }
   
 
   return<>
-  <SideCart openCart={openCart} onOpenCart={() =>setOpenCart(false)}/>
+  <SideCart openCart={openCart} onOpenCart={() =>setOpenCart(false)} cart={cart}/>
   <Header onCloseCart={() =>setOpenCart(true)}/>
-  <Main />
-  <AllCards /></>
+  <Main addProdToCart={(newProd) => addProdToCart(newProd)} />
+  <AllCards  addProdToCart={(newProd) => addProdToCart(newProd)}/></>
   
     
   ;

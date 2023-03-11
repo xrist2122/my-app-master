@@ -2,6 +2,8 @@ import { useState } from "react";
 import './SideCart.css'
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
+import CartItem from './CartItem'
+
 function SideCart(props) {
   let teas = [
     { id: 1, name: "Мистер Пропер", cost: "430₽/унция", img: "./img/supplies-1.png" },
@@ -11,38 +13,12 @@ function SideCart(props) {
   ]
 
 
-  const [value, setValue] = useState(0)
   const [gold, setNewPage] = useState(false)
+  // props.cart.map
 
-  let cards = teas.map(tea => {
-    return   <><div className="CartItem">
-    <img src={tea.img} id="CartItemImg" />
-    <div className="Itemtext">
-      <p>{tea.name}</p>
-      <p><b>{tea.cost}</b></p>
-    </div>
-    <div className="RemoveButton">
-      <img src="img/CloseButton.svg" />
-    </div>
-    <div className="CountButtons">
-      <img src="img/Add.png" onClick={()=> setValue(value+1)} />
-      <input type="text" maxLength="2" value={value} onChange={event => setValue(event.target.value)} />
-      <img src="img/Remove.png" onClick={()=> setValue(value-1)} />
-
-    </div>
-  </div></>
-    
-    
-   
+  let cards = props.cart.map(tea => {
+    return   <><CartItem cost={tea.cost} name={tea.name} img={tea.img}/></>
   })
-  
-
-
-  let message;
-  if (gold) {
-
-
-  }
   let styleOverflow = {}
   let styleSideBlock = {}
   if (props.openCart === true) {

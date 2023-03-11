@@ -2,7 +2,7 @@ import {Card, Stack} from 'react-bootstrap';
 import CardProd from './CardProd';
 import './AllCards.css'
 
-function AllCards() {
+function AllCards({addProdToCart}) {
     let teas=[
         {id: 1, name:"Мистер Пропер", cost:"430₽/унция", img:"./img/supplies-1.png"},
         {id: 2, name:"Негр обыкновенный", cost:"755₽/унция", img:"./img/supplies-2.png"},
@@ -21,18 +21,21 @@ function AllCards() {
         {id: 15, name:"Рука", cost:"210₽/унция", img:"./img/supplies-15.webp"},
     ]
     let cards=teas.map(tea =>{
-        return <CardProd name={tea.name} cost={tea.cost} img={tea.img} />
+        return <CardProd name={tea.name} cost={tea.cost} img={tea.img} addProdToCart={(newProd) => addProdToCart(newProd)} />
     })
     return (
         <div className="MainContent">
         <Stack direction="horizontal" gap={3} className="class">
             <h1 style={{color:"white"}}>Все чаи</h1>
+
             <input className="ms-auto" />
         </Stack>
 
         <div className="Cards">
             {cards}
         </div>
+
+
 </div>
     );
 }
