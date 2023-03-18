@@ -7,6 +7,10 @@ import "./index.css"
 import Main from './Components/Main/slider';
 import AllCards from './Components/Main/AllCards';
 import SideCart from './Components/Cart/SideCart';
+import { Route,Routes } from 'react-router-dom';
+import Zakladki from './Components/Header/Zakladki'
+import Profile from './Components/Header/Profile';
+
 
 function App() {
   const[openCart,setOpenCart]=useState(false);
@@ -19,10 +23,15 @@ function App() {
   return<>
   <SideCart openCart={openCart} onOpenCart={() =>setOpenCart(false)} cart={cart}/>
   <Header onCloseCart={() =>setOpenCart(true)}/>
-  <Main addProdToCart={(newProd) => addProdToCart(newProd)} />
-  <AllCards  addProdToCart={(newProd) => addProdToCart(newProd)}/></>
+
+  <Routes>
+    <Route path='/' element={<><Main addProdToCart={(newProd) => addProdToCart(newProd)} /><AllCards  addProdToCart={(newProd) => addProdToCart(newProd)}/></>}></Route>
+    <Route path='/zakladki' element={<Zakladki />}/>
+    <Route path="/profile" element={<Profile />}></Route>
+  </Routes>
   
-    
+  
+    </>
   ;
 
 }
