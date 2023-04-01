@@ -9,3 +9,22 @@
     justify-content: space-between;
 
 }
+.profille{
+    max-width: 1080px;
+    margin:0 auto;
+    background-color: #1C2C3A;
+    padding-top: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.podstol{
+    background-color:#1C2C3A ;
+}
+.ponos22{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}

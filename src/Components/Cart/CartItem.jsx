@@ -13,7 +13,7 @@ function CartItem(tea) {
       <p><b>{tea.cost}</b></p>
     </div>
     <div className="RemoveButton">
-      <img src="img/CloseButton.svg" />
+      <img src="img/CloseButton.svg"/>
     </div>
     <div className="CountButtons">
       <img src="img/Add.png" onClick={()=> setValue(value+1)} />

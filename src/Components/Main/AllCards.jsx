@@ -2,7 +2,7 @@ import {Card, Stack} from 'react-bootstrap';
 import CardProd from './CardProd';
 import './AllCards.css'
 
-function AllCards({addProdToCart}) {
+function AllCards({addProdToCart, addToFav}) {
     let teas=[
         {id: 1, name:"Мистер Пропер", cost:"430", img:"./img/supplies-1.png"},
         {id: 2, name:"Негр обыкновенный", cost:"755", img:"./img/supplies-2.png"},
@@ -21,7 +21,7 @@ function AllCards({addProdToCart}) {
         {id: 15, name:"Рука", cost:"210", img:"./img/supplies-15.webp"},
     ]
     let cards=teas.map(tea =>{
-        return <CardProd name={tea.name} cost={tea.cost} img={tea.img} addProdToCart={(newProd) => addProdToCart(newProd)} />
+        return <CardProd name={tea.name} cost={tea.cost} img={tea.img} addProdToCart={(newProd) => addProdToCart(newProd)} addToFav={(newFav)=> addToFav(newFav)}  />
     })
     return (
         <div className="MainContent">

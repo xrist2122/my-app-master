@@ -1,8 +1,15 @@
-import {Card, Stack} from 'react-bootstrap';
+import {Card, Stack,Button} from 'react-bootstrap';
 import CardProd from '../Main/AllCards';
 import { Route,Routes } from 'react-router-dom';
+import { Link, } from "react-router-dom";
+import CartItem from '../Cart/CartItem';
+import './Profile.css'
 
-function Zakladki({addProdToCart}){
+
+
+
+
+function Zakladki(props,tea){
     let teas=[
         {id: 1, name:"Мистер Пропер", cost:"430₽/унция", img:"./img/supplies-1.png"},
         {id: 2, name:"Негр обыкновенный", cost:"755₽/унция", img:"./img/supplies-2.png"},
@@ -20,14 +27,20 @@ function Zakladki({addProdToCart}){
         {id: 14, name:"Фрукты Обэмэ", cost:"210₽/унция", img:"./img/supplies-14.webp"},
         {id: 15, name:"Рука", cost:"210₽/унция", img:"./img/supplies-15.webp"},
     ]
-    let cards=teas.map(tea =>{
-        return <CardProd name={tea.name} cost={tea.cost} img={tea.img} addProdToCart={(newProd) => addProdToCart(newProd)} />
-    })
-    return <div className="MainContent">
-        <div className="Cards">
+    let cards = props.favor.map(tea => {
+        return <><CartItem cost={tea.cost} name={tea.name} img={tea.img} /></>
+      })
+    
+    return <> <div className="MainContent" style={{paddingLeft:"10px",paddingRight:"10px"}}>
+    <Stack direction="horizontal" gap={3} className="class">
+        <h1 style={{color:"white"}}>Все чаи</h1>
+
+        <Link to="/" className='ms-auto'><Button variant="outline-light" className="ms-auto">На главную</Button></Link>
+    </Stack>
+    <div className="ponos22">
             {cards}
         </div>
-        </div>;
+    </div> </>;
 
 }
 export default Zakladki;

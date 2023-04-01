@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {Card, Stack} from 'react-bootstrap';
 import './AllCards.css'
 
-function CardProd(props) {
+function CardProd(props,{addToFav}) {
 
   const [addedCart, SetAddedCart] = useState(false)
   const [addFavorite,setFavorite]=useState(false)
@@ -11,12 +11,17 @@ function CardProd(props) {
     props.addProdToCart(newProd)
 
   }
+  function clickAddToFav(newFav){
+    setFavorite(!addFavorite)
+    props.addToFav(newFav)
+
+  }
 
 
 
   return (
     <Card className="poleno2">
-      <img src={addFavorite ? './img/favorite.png' : './img/uncheked.svg'} onClick={() => setFavorite(!addFavorite)} className="cyka"/>
+      <img className="cyka" src={addFavorite ? './img/favorite.png' : './img/uncheked.svg'} onClick={()=> clickAddToFav({id:props.id,name:props.name,cost:props.cost,img:props.img}) } />
       <Card.Img variant="top" src={props.img} className="class1"/>
       <Card.Body>
         <Card.Title>{props.name}</Card.Title>
