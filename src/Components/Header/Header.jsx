@@ -15,7 +15,7 @@ function Header(props) {
     <img src="/img/icons8-skull-crossbones-50 (1) 15.png" style={{"marginTop": "20px"}} width={40} height={40}/>
     <div className='leftHeaderText'>
     <Link to="/" style={{ textDecoration: 'none' }}><h2 style={{"color": "white"}}>Black Market228</h2>
-    <p style={{"color": "#9D9D9D"}}>НИКОГО НЕ ПРОСИМ</p></Link>
+    <p style={{"color": "#9D9D9D"}}>НИКОГО НЕ ПРОСИМj</p></Link>
     </div>
     </div>
 
